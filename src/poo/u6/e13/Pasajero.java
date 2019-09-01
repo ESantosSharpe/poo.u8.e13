@@ -5,6 +5,7 @@
  */
 package poo.u6.e13;
 
+import java.awt.Color;
 import javax.swing.*;
 
 /**
@@ -18,7 +19,8 @@ public class Pasajero extends javax.swing.JFrame {
      */
     public Pasajero() {
         initComponents();
-        String aleman, ingles, portugues, frances;
+        setLocationRelativeTo(null);
+        lblCampos.setVisible(false);
     }
 
     /**
@@ -47,11 +49,18 @@ public class Pasajero extends javax.swing.JFrame {
         jCheckBox4 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        lblCampos = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pasajero");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Nombre");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Apellido");
 
         buttonGroup1.add(jRadioButton1);
@@ -118,6 +127,19 @@ public class Pasajero extends javax.swing.JFrame {
             }
         });
 
+        lblCampos.setForeground(new java.awt.Color(255, 0, 0));
+        lblCampos.setText("*Campos obligatorios");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Estado civil:");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("Idiomas hablados:");
+        jLabel4.setToolTipText("");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Países a visitar:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,39 +147,50 @@ public class Pasajero extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(181, 181, 181)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton3))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(paises, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(10, 10, 10)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton5)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jRadioButton1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRadioButton3)
+                                            .addComponent(jLabel3)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtNombre)))
+                                        .addGap(10, 10, 10))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRadioButton2)
+                                            .addComponent(jRadioButton4)
+                                            .addComponent(jRadioButton1))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jCheckBox3)
+                                        .addComponent(jCheckBox4)
+                                        .addComponent(jCheckBox2)
+                                        .addComponent(jCheckBox1)
+                                        .addComponent(jLabel4))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addGap(18, 18, 18)
-                                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jCheckBox2)
-                                    .addComponent(jCheckBox1)
-                                    .addComponent(jCheckBox3)
-                                    .addComponent(jCheckBox4))))
-                        .addGap(224, 224, 224))))
+                                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblCampos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(168, 168, 168))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jRadioButton5)
+                            .addComponent(paises, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,31 +201,41 @@ public class Pasajero extends javax.swing.JFrame {
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jCheckBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jCheckBox2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jCheckBox3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jCheckBox1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBox2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBox3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton4)
                     .addComponent(jCheckBox4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton5)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(paises, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(247, 247, 247)
+                .addGap(91, 91, 91)
+                .addComponent(lblCampos)
+                .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         pack();
@@ -208,33 +251,53 @@ public class Pasajero extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String nombre=null, apellido=null, pais=null, estadoCivil=null;
-        if(nombre==null||apellido==null||pais==null||estadoCivil==null){
-            JOptionPane.showMessageDialog(null, "Debe ingresar todos los datos", "Atención", JOptionPane.ERROR_MESSAGE);
-        }else{nombre=this.txtNombre.getText();
-        apellido=this.txtApellido.getText();
-        pais=this.paises.getSelectedItem().toString();
-        jRadioButton1.setActionCommand("Soltero");
-        jRadioButton2.setActionCommand("Casado");
-        jRadioButton3.setActionCommand("Divorciado");
-        jRadioButton4.setActionCommand("Viudo");
-        jRadioButton5.setActionCommand("Otro");
-        estadoCivil=buttonGroup1.getSelection().getActionCommand();
-        String aleman="", frances="", portugues="", ingles="";
+        ButtonModel botones=buttonGroup1.getSelection();
+        if(txtNombre.getText().isEmpty()||txtApellido.getText().isEmpty()){
+            lblCampos.setVisible(true);
+            txtNombre.setBorder(BorderFactory.createLineBorder(Color.RED));
+            txtApellido.setBorder(BorderFactory.createLineBorder(Color.RED));
+        }
+        if(botones==null){
+            lblCampos.setVisible(true);
+            jLabel3.setForeground(Color.red);
+            jLabel3.setText("* Estado civil:");
+        }
+        if(!jCheckBox1.isSelected()&&!jCheckBox2.isSelected()&&!jCheckBox3.isSelected()&&!jCheckBox4.isSelected()){
+            lblCampos.setVisible(true);
+            jLabel4.setForeground(Color.red);
+            jLabel4.setText("* Idiomas hablados:");
+        }
+        if(!txtNombre.getText().isEmpty()&&!txtApellido.getText().isEmpty()&&botones!=null&&!(!jCheckBox1.isSelected()&&!jCheckBox2.isSelected()&&!jCheckBox3.isSelected()&&!jCheckBox4.isSelected())){
+            nombre=this.txtNombre.getText();
+            apellido=this.txtApellido.getText();
+            pais=this.paises.getSelectedItem().toString();
+            jRadioButton1.setActionCommand("Soltero");
+            jRadioButton2.setActionCommand("Casado");
+            jRadioButton3.setActionCommand("Divorciado");
+            jRadioButton4.setActionCommand("Viudo");
+            jRadioButton5.setActionCommand("Otro");
+            estadoCivil=buttonGroup1.getSelection().getActionCommand();
+            String aleman="", frances="", portugues="", ingles="";
+            if(jCheckBox1.isSelected()){
+                aleman="Alemán. ";
+            }
+            if(jCheckBox2.isSelected()){
+                portugues="Portugués. ";
+            }
+            if(jCheckBox3.isSelected()){
+                frances="Francés. ";
+            }
+            if(jCheckBox4.isSelected()){
+                ingles="Inglés.";
+            }
         
-        if(jCheckBox1.isSelected()){
-            aleman="Alemán, ";
-        }
-        if(jCheckBox2.isSelected()){
-            portugues="Portugués, ";
-        }
-        if(jCheckBox3.isSelected()){
-            frances="Francés, ";
-        }
-        if(jCheckBox4.isSelected()){
-            ingles="Inglés.";
-        }
-        
-        JOptionPane.showMessageDialog(null, "Nombre completo: "+nombre+" "+apellido+"\n"+"País a visitar: "+pais+"\nEstado Civil: "+estadoCivil+"\nIdiomas hablados: "+aleman+frances+ingles+portugues, "Pasajero", JOptionPane.PLAIN_MESSAGE);
+            PantallaFinal PP=new PantallaFinal();
+            PP.txtNombre.setText(nombre+" "+apellido);
+            PP.txtEstadoCivil.setText(estadoCivil);
+            PP.txtIdiomas.setText(aleman+portugues+frances+ingles);
+            PP.txtPais.setText(pais);
+            this.setVisible(false);
+            PP.setVisible(true);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -299,11 +362,15 @@ public class Pasajero extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JLabel lblCampos;
     private javax.swing.JComboBox<String> paises;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtNombre;
