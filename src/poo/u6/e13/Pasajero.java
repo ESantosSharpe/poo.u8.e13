@@ -83,7 +83,7 @@ public class Pasajero extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButton5);
         jRadioButton5.setText("Otro");
 
-        paises.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alemania", "Francia", "España", "Italia" }));
+        paises.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Alemania", "Francia", "España", "Italia" }));
 
         jCheckBox1.setText("Alemán");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +138,7 @@ public class Pasajero extends javax.swing.JFrame {
         jLabel4.setToolTipText("");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Países a visitar:");
+        jLabel5.setText("País a visitar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,10 +187,10 @@ public class Pasajero extends javax.swing.JFrame {
                         .addGap(168, 168, 168))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
                             .addComponent(jRadioButton5)
-                            .addComponent(paises, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(paises, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 389, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,9 +220,9 @@ public class Pasajero extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jCheckBox4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox4)
+                    .addComponent(jRadioButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton5)
                 .addGap(24, 24, 24)
@@ -267,7 +267,12 @@ public class Pasajero extends javax.swing.JFrame {
             jLabel4.setForeground(Color.red);
             jLabel4.setText("* Idiomas hablados:");
         }
-        if(!txtNombre.getText().isEmpty()&&!txtApellido.getText().isEmpty()&&botones!=null&&!(!jCheckBox1.isSelected()&&!jCheckBox2.isSelected()&&!jCheckBox3.isSelected()&&!jCheckBox4.isSelected())){
+        if(paises.getSelectedIndex()==0){
+            lblCampos.setVisible(true);
+            jLabel5.setForeground(Color.red);
+            jLabel5.setText("* País a visitar");
+        }
+        if(paises.getSelectedIndex()!=0&&!txtNombre.getText().isEmpty()&&!txtApellido.getText().isEmpty()&&botones!=null&&!(!jCheckBox1.isSelected()&&!jCheckBox2.isSelected()&&!jCheckBox3.isSelected()&&!jCheckBox4.isSelected())){
             nombre=this.txtNombre.getText();
             apellido=this.txtApellido.getText();
             pais=this.paises.getSelectedItem().toString();
